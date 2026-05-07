@@ -1,0 +1,220 @@
+export default function LuxuryHotelWebsite() {
+  return (
+    <div className="min-h-screen bg-black text-white font-sans">
+      {/* Navbar */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-yellow-700">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-yellow-500 tracking-wide">
+              Royal Palace Hotel
+            </h1>
+            <p className="text-sm text-gray-300">Luxury Comfort & Timeless Hospitality</p>
+          </div>
+
+          <nav className="hidden md:flex gap-8 text-lg">
+            <a href="#home" className="hover:text-yellow-400 transition">Home</a>
+            <a href="#rooms" className="hover:text-yellow-400 transition">Rooms</a>
+            <a href="#facilities" className="hover:text-yellow-400 transition">Facilities</a>
+            <a href="#gallery" className="hover:text-yellow-400 transition">Gallery</a>
+            <a href="#contact" className="hover:text-yellow-400 transition">Contact</a>
+          </nav>
+
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-5 py-2 rounded-xl shadow-lg transition">
+            Book Now
+          </button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section
+        id="home"
+        className="relative h-screen flex items-center justify-center text-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="relative z-10 max-w-4xl px-6">
+          <p className="text-yellow-400 text-xl mb-4 tracking-widest uppercase">
+            Welcome To
+          </p>
+
+          <h2 className="text-6xl md:text-8xl font-bold leading-tight mb-6">
+            Royal Palace Hotel
+          </h2>
+
+          <p className="text-xl text-gray-200 mb-8">
+            Experience premium luxury, world-class dining, and unforgettable stays.
+          </p>
+
+          <div className="flex gap-4 justify-center flex-wrap">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-2xl text-lg font-semibold transition shadow-xl">
+              Explore Rooms
+            </button>
+
+            <button className="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-2xl text-lg transition">
+              View Gallery
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Hotel Info */}
+      <section className="bg-zinc-950 py-16 px-6 border-t border-yellow-700">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+          <div className="bg-zinc-900 p-8 rounded-3xl border border-yellow-600 shadow-2xl">
+            <h3 className="text-yellow-400 text-2xl font-bold mb-4">Hotel Name</h3>
+            <p className="text-2xl">Royal Palace Hotel</p>
+          </div>
+
+          <div className="bg-zinc-900 p-8 rounded-3xl border border-yellow-600 shadow-2xl">
+            <h3 className="text-yellow-400 text-2xl font-bold mb-4">Address</h3>
+            <p className="text-lg leading-8 text-gray-300">
+              123 Grand Avenue,<br />
+              MG Road, Near City Center,<br />
+              Chennai, Tamil Nadu - 600089
+            </p>
+          </div>
+
+          <div className="bg-zinc-900 p-8 rounded-3xl border border-yellow-600 shadow-2xl">
+            <h3 className="text-yellow-400 text-2xl font-bold mb-4">Contact Number</h3>
+            <p className="text-2xl">+91 98765 43210</p>
+            <p className="text-gray-400 mt-2">reservations@royalpalace.com</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Rooms Section */}
+      <section id="rooms" className="py-24 px-6 bg-black">
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <h2 className="text-5xl font-bold text-yellow-500 mb-4">Luxury Rooms</h2>
+          <p className="text-gray-400 text-lg">
+            Choose from premium suites designed for comfort and elegance.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {[
+            {
+              title: 'Deluxe Suite',
+              image:
+                'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop',
+            },
+            {
+              title: 'Executive Room',
+              image:
+                'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2074&auto=format&fit=crop',
+            },
+            {
+              title: 'Presidential Suite',
+              image:
+                'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2070&auto=format&fit=crop',
+            },
+          ].map((room, index) => (
+            <div
+              key={index}
+              className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-yellow-500 transition shadow-2xl"
+            >
+              <img
+                src={room.image}
+                alt={room.title}
+                className="h-72 w-full object-cover hover:scale-105 transition duration-500"
+              />
+
+              <div className="p-6">
+                <h3 className="text-3xl font-bold mb-4">{room.title}</h3>
+                <p className="text-gray-400 mb-6">
+                  Elegant interiors with premium amenities and luxury comfort.
+                </p>
+
+                <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-xl font-semibold transition">
+                  Book This Room
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Facilities */}
+      <section id="facilities" className="py-24 px-6 bg-zinc-950">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-yellow-500 mb-4">Facilities</h2>
+            <p className="text-gray-400 text-lg">
+              Premium services crafted for a five-star experience.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {['Infinity Pool', 'Luxury Spa', 'Free WiFi', 'Fine Dining'].map(
+              (facility, index) => (
+                <div
+                  key={index}
+                  className="bg-black border border-yellow-600 p-10 rounded-3xl text-center hover:scale-105 transition"
+                >
+                  <h3 className="text-2xl font-semibold text-yellow-400">
+                    {facility}
+                  </h3>
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section id="gallery" className="py-24 px-6 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-yellow-500 mb-4">Gallery</h2>
+            <p className="text-gray-400 text-lg">
+              Explore the elegance and beauty of our hotel.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              'https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?q=80&w=1974&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2070&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1974&auto=format&fit=crop',
+            ].map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt="Hotel"
+                className="rounded-3xl h-80 w-full object-cover hover:scale-105 transition duration-500 shadow-2xl"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-24 px-6 bg-zinc-950">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl font-bold text-yellow-500 mb-6">Contact Us</h2>
+
+          <p className="text-xl text-gray-300 mb-8">
+            Ready to experience luxury hospitality? Reach out today.
+          </p>
+
+          <div className="space-y-4 text-lg">
+            <p>📍 Bangalore, Karnataka, India</p>
+            <p>📞 +91 90086 28000</p>
+            <p>✉ reservations@royalpalace.com</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black border-t border-yellow-700 py-8 text-center text-gray-500">
+        <p>© 2026 Royal Palace Hotel. All Rights Reserved.</p>
+      </footer>
+    </div>
+  );
+}
